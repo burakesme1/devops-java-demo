@@ -28,29 +28,7 @@ pipeline {
 
         }
  
-        stage('Build') {
-
-            steps {
-
-                sh 'mvn clean package'
-
-            }
-
-        }
- 
-        stage('SonarQube Scan') {
-
-            steps {
-
-                withSonarQubeEnv('SonarQubeServer') {
-
-                    sh 'mvn sonar:sonar'
-
-                }
-
-            }
-
-        }
+        
  
         stage('Docker Build') {
 
